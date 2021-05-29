@@ -1,0 +1,59 @@
+@startuml
+package speakers {
+interface Speaker {
+  string speak()
+}
+
+class Cat {
+  string speak()
+}
+
+class Dog {
+  string speak()
+}
+
+class Cow {
+  string speak()
+}
+
+class Human {
+  string speak()
+}
+
+Cat --|> Speaker
+Dog --|> Speaker
+Cow --|> Speaker
+Human --|> Speaker
+
+class SpeakerFactory {
+  Speaker createSpeakerFrom(int input)
+}
+
+SpeakerFactory --> Speaker
+SpeakerFactory ..> Cat
+SpeakerFactory ..> Dog
+SpeakerFactory ..> Cow
+SpeakerFactory ..> Human
+}
+
+package leyend {
+A --> B : Strongly Coupled
+A ..> B : Weakly Coupled
+A -|> B : A implements B
+}
+
+package UserCode {
+class UserClass1
+UserClass1 ---> SpeakerFactory
+UserClass1 --> Speaker
+
+class UserClass2
+UserClass2 --> SpeakerFactory
+UserClass2 --> Speaker
+
+class UserClass3
+UserClass3 --> SpeakerFactory
+UserClass3 --> Speaker
+}
+
+@enduml

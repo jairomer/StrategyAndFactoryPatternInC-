@@ -3,7 +3,7 @@
 
 /* With conditionals. 
  * 
- * Adding a new animal involves mofifying all conditionals
+ * Adding a new animal involves mofifying all conditionals.
  *
  * */
 void conditionalAnimalTalk(int input) {
@@ -20,28 +20,6 @@ void conditionalAnimalTalk(int input) {
     std::cout << "Hello world!" << std::endl;
   }
 }
-
-
-std::string getTalk(int input) {
-  // if goto: An antipattern we want to avoid.
-  if (input <= 1) {
-    Cat cat;
-    return cat.speak();
-  }
-  else if (input > 1 && input < 3) {
-    Dog dog;
-    return dog.speak();
-  }
-  else if (input > 3 && input < 6) {
-    Cow cow;
-    return cow.speak();
-  }
-  else {
-    Human hum;
-    return hum.speak();
-  }
-}
-
 
 /* With polymorphism. */
 void polymorphicAnimalTalk(int input) {
